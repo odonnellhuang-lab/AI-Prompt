@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#faf6ef" />
+  <meta name="description" content="臺中榮民總醫院 10/27 生成式 AI 智慧醫療與數位內容應用實務｜P9、P18、P27 手機操作教材與一鍵複製提示詞" />
+  <title>10/27 AI 研習｜三段落實作提示詞教材</title>
+  <style>
+    :root{--bg:#faf6ef;--paper:#fffefa;--ink:#2f3349;--muted:#667086;--line:#e9e3d9;--iris:#5f55dc;--blue:#486ddb;--amber:#ed9e4d;--success:#287e70;--soft-purple:#f1edff;--soft-orange:#fff3e5;--shadow:0 15px 38px rgba(83,72,117,.085),0 3px 9px rgba(67,49,50,.035)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 7% 5%,#ebe6ff 0,transparent 28%),radial-gradient(ellipse at 98% 3%,#fff0de 0,transparent 32%),var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;color:var(--ink);line-height:1.7}
+    .wrap{max-width:1030px;margin:auto;padding:26px 20px 80px}.hero{padding:31px 34px;border-radius:30px;background:linear-gradient(125deg,#fffefc 0%,#f5f1ff 57%,#fff0e4 100%);box-shadow:var(--shadow);border:1px solid rgba(116,107,190,.11);position:relative;overflow:hidden}
+    .hero:after{content:'✦';font-size:150px;color:rgba(123,109,224,.09);position:absolute;right:21px;top:-45px;pointer-events:none}.eyebrow{display:inline-flex;gap:7px;align-items:center;border:1px solid #ded7fa;background:#ffffffba;border-radius:99px;padding:4px 13px;color:#6556bf;font-size:13px;font-weight:800;letter-spacing:.35px}h1{font-size:clamp(27px,4.3vw,40px);letter-spacing:-.9px;line-height:1.3;margin:18px 0 9px}h1 em{font-style:normal;color:var(--iris)}.lead{font-size:17px;color:#4d566e;margin:0 0 17px;max-width:820px}.meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.pill{font-size:13px;font-weight:700;color:#52617a;background:#ffffffc9;border-radius:30px;padding:6px 11px;border:1px solid #e9e4e0}
+    .warning{margin-top:19px;border-radius:17px;border:1px solid #e9d5bd;background:#fff8ee;padding:13px 17px;color:#775034;font-size:14px}.warning strong{color:#865029}.tabs{position:sticky;z-index:20;top:0;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;background:rgba(250,246,239,.96);backdrop-filter:blur(13px);padding:14px 0 10px;margin:10px 0}.tab{background:white;color:#626681;border:1px solid #e7e1dc;border-radius:17px;min-height:56px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 2px 9px #c6bbae1a;transition:.2s}.tab:hover,.tab:focus-visible{border-color:#a69feb}.tab.active{color:white;background:linear-gradient(110deg,#5b69e0,#8756d9);box-shadow:0 9px 19px #5c55ce2e;border-color:transparent}
+    .panel{display:none}.panel.active{display:block;animation:pop .2s ease}@keyframes pop{from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.section-header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:13px 0 16px}.section-header h2{margin:0;font-size:25px;line-height:1.4;letter-spacing:-.5px}.section-header small{color:#716ca7;font-weight:800;font-size:13px}.time{background:var(--soft-orange);border:1px solid #f8dec0;color:#a66023;padding:6px 13px;border-radius:18px;font-weight:800;white-space:nowrap}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{border-radius:23px;background:var(--paper);padding:21px 23px;box-shadow:var(--shadow);border:1px solid #eae5dd;margin-bottom:16px}.card h3{display:flex;align-items:center;gap:9px;font-size:19px;margin:0 0 13px;color:#383954}.num{display:inline-grid;place-items:center;width:28px;height:28px;flex:0 0 28px;border-radius:9px;background:var(--soft-purple);color:var(--iris);font-weight:900}.desc{color:var(--muted);font-size:14px;margin:4px 0 12px}.topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.topic{min-height:62px;border:1px solid #e5e1e5;background:#fff;border-radius:15px;padding:11px 12px;text-align:left;color:#495065;cursor:pointer;font-size:15px;font-weight:750;display:flex;align-items:center;gap:9px;transition:.18s}.topic:hover{background:#fbfaff;border-color:#8a7ce6}.topic[aria-pressed=true]{border-color:#6d5ee0;background:#f1edff;color:#453dbb;box-shadow:0 0 0 2px #e6dfff inset}.topic .emoji{font-size:21px}.steps{margin:0;padding-left:26px}.steps li{padding:4px 0;font-size:15px}.steps li::marker{color:#7668d5;font-weight:900}.source{width:100%;resize:vertical;min-height:138px;max-height:300px;border:1px solid #ded9e0;background:#fefefa;padding:13px;border-radius:14px;font:inherit;font-size:14px;color:var(--ink);line-height:1.6;outline:none}.source:focus{border-color:#7d6ce6;box-shadow:0 0 0 3px #dfd7ff}.field-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.field-head label{font-weight:800;color:#474766}.field-head button{border:0;cursor:pointer;background:#f0eaff;border-radius:9px;padding:5px 9px;color:#5e50b8;font-weight:750}.hint{font-size:13px;color:#727584;margin-top:5px}
+    .prompt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}.prompt-head h3{margin:0}.prompt{width:100%;min-height:325px;resize:vertical;border-radius:15px;border:1px solid #dcd7ea;background:linear-gradient(155deg,#fcfbff,#ffffff);color:#31394b;padding:17px;font-family:inherit;font-size:14px;line-height:1.72;white-space:pre-wrap}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:13px}.btn{border:0;border-radius:14px;min-height:46px;padding:10px 16px;font-size:15px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:transform .1s}.btn:active{transform:scale(.98)}.btn.primary{background:linear-gradient(110deg,#4d70e6,#7e5cde);color:white;flex:1}.btn.secondary{background:#f0edf7;color:#514f79}.btn.link{background:#f8eddf;color:#795329}.task-help{margin-top:13px;background:#f5f1ff;border:1px solid #e9e2ff;padding:12px 14px;border-radius:13px;color:#5a5174;font-size:14px}
+    .checklist{display:grid;gap:12px}.check{display:flex;align-items:flex-start;gap:9px;font-size:15px;cursor:pointer}.check input{accent-color:#6859d6;min-width:20px;min-height:20px;margin-top:3px}.check-note{margin-top:12px;border-radius:12px;background:#f0f7f3;color:#2e715e;padding:10px 13px;font-size:14px}.subnav{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.subnav button{border:1px solid #dfd4f7;border-radius:12px;background:#f7f3ff;color:#5850a3;font-weight:800;padding:11px;cursor:pointer}.subnav button.active{background:#6256d5;color:white}.foot{border-top:1px solid #e7e1dd;padding-top:22px;margin-top:32px;font-size:14px;color:#667083}.foot a{color:#5548c1}.no-js{border-radius:12px;background:#fff2de;padding:12px;margin-top:20px}.toast{position:fixed;z-index:100;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;pointer-events:none;transition:.22s;max-width:min(90vw,430px);background:#2d3451;color:white;padding:12px 20px;text-align:center;border-radius:14px;box-shadow:0 12px 22px #1716334d;font-weight:800}.toast.show{opacity:1;transform:translate(-50%,0)}.note-banner{background:#fff8ee;border:1px solid #eed7ba;border-radius:17px;padding:15px 19px;margin-top:8px;font-size:14px;color:#775e3c}
+    @media(max-width:760px){.wrap{padding:12px 13px 50px}.hero{border-radius:20px;padding:21px 20px}.lead{font-size:15px}.tabs{gap:6px}.tab{min-height:54px;font-size:12px;padding:4px 2px}.section-header h2{font-size:21px}.grid{grid-template-columns:1fr;gap:0}.card{padding:18px 17px;border-radius:19px}.topic-grid{grid-template-columns:1fr 1fr}.topic{font-size:13px;padding:9px;min-height:58px}.topic .emoji{font-size:19px}.prompt{font-size:14px;min-height:290px}.btn{font-size:14px}.meta{gap:6px}.pill{font-size:12px}.section-header{margin:13px 0 12px}.subnav{grid-template-columns:1fr}}
+    @media(max-width:360px){.topic-grid{grid-template-columns:1fr}.tab{font-size:11px}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    @media print{body{background:white}.wrap{max-width:none}.tabs,.actions,.field-head button,.subnav,.toast{display:none!important}.panel{display:block!important;page-break-before:always}.card{box-shadow:none}.prompt{height:auto;min-height:220px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">✦ 10/27 臺中榮總 AI 研習｜學員實作教材</span>
+    <h1>三個段落實作，<br /><em>手機也能跟著做</em></h1>
+    <p class="lead">使用 ChatGPT，從<strong>工作文案 → 宣導海報 → 教學簡報大綱</strong>。每次只做一個小任務，不需要一次學會所有功能。</p>
+    <div class="meta"><span class="pill">P9｜10 分鐘</span><span class="pill">P18｜10 分鐘</span><span class="pill">P27｜5 分鐘</span><span class="pill">手機優先｜筆電亦可</span></div>
+    <div class="warning"><strong>🛡️ 資料安全：</strong>本頁只供課堂練習。請使用公開、虛構或經核准的資料；不要輸入真實病歷、病人個資或未經授權的院內資訊。生成結果是<strong>待審核草稿</strong>，不是正式衛教或院內 SOP。</div>
+  </header>
+  <nav class="tabs" aria-label="切換段落實作">
+    <button type="button" class="tab active" id="tab-p9" data-tab="p9" aria-controls="panel-p9" aria-selected="true">① P9 文案</button>
+    <button type="button" class="tab" id="tab-p18" data-tab="p18" aria-controls="panel-p18" aria-selected="false">② P18 海報</button>
+    <button type="button" class="tab" id="tab-p27" data-tab="p27" aria-controls="panel-p27" aria-selected="false">③ P27 簡報</button>
+  </nav>
+
+  <main>
+    <section class="panel active" id="panel-p9" role="region" aria-labelledby="tab-p9">
+      <div class="section-header"><div><small>段落實作 ①</small><h2>AI 工作文案生成</h2></div><span class="time">⏱ 10 分鐘｜主要練習</span></div>
+      <div class="grid">
+        <div>
+          <div class="card"><h3><span class="num">1</span> 選擇你的情境</h3><div class="topic-grid" data-options="p9"></div><p class="desc">可以選你熟悉的工作內容；不需要按照職務身分選題。</p></div>
+          <div class="card"><h3><span class="num">2</span> 依照五個步驟操作</h3><ol class="steps"><li>打開本頁，選擇練習主題。</li><li>確認或修改下方的<strong>示範資料</strong>。</li><li>按「複製完整提示詞」。</li><li>開啟 ChatGPT，貼上提示詞並送出。</li><li>檢查內容，再要求 AI 修改一次。</li></ol></div>
+        </div>
+        <div>
+          <div class="card"><h3><span class="num">3</span> 練習資料（可編輯）</h3><div class="field-head"><label for="source-p9">目前主題資料</label><button type="button" data-reset="p9">還原示範資料</button></div><textarea class="source" id="source-p9" spellcheck="false" aria-label="P9 原始資料"></textarea><p class="hint">請以公開、虛構或經授權且適合外部 AI 使用的資料取代。沒有資料時，可先使用示範文字練習。</p></div>
+        </div>
+      </div>
+      <div class="card"><div class="prompt-head"><h3><span class="num">4</span> 複製提示詞</h3></div><textarea id="prompt-p9" class="prompt" readonly spellcheck="false" aria-label="P9 可複製提示詞"></textarea><div class="actions"><button type="button" class="btn primary" data-copy="p9">📋 複製完整提示詞</button><a class="btn link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">開啟 ChatGPT ↗</a></div><div class="task-help">💡 <strong>進階挑戰：</strong>將文案改成「更適合長者閱讀」或「更適合院內公告」的語氣，並比較差異。</div></div>
+      <div class="card"><h3><span class="num">✓</span> 完成檢查</h3><div class="checklist"><label class="check"><input type="checkbox"> 已產出 <strong>1 個標題＋3 個重點＋1 句提醒</strong></label><label class="check"><input type="checkbox"> 已確認 AI 沒有自行補上不明資料或醫療建議</label><label class="check"><input type="checkbox"> 已提出至少一項修改要求（進階）</label></div><p class="check-note">完成一份可人工確認的文字草稿即可，不必與其他人比較進度。</p></div>
+    </section>
+
+    <section class="panel" id="panel-p18" role="region" aria-labelledby="tab-p18" hidden>
+      <div class="section-header"><div><small>段落實作 ②</small><h2>AI 宣導海報生成</h2></div><span class="time">⏱ 10 分鐘｜彈性跟做</span></div>
+      <div class="grid"><div>
+        <div class="card"><h3><span class="num">1</span> 選擇海報主題</h3><div class="topic-grid" data-options="p18"></div><p class="desc">如果第一個練習已完成文案，可直接用那份<strong>經查核的文案</strong>取代示範資料。</p></div>
+        <div class="card"><h3><span class="num">2</span> 依照五個步驟操作</h3><ol class="steps"><li>選擇主題，確認已核對的文案。</li><li>複製完整的海報生成指令。</li><li>貼入 ChatGPT，要求產生 A4 直式海報。</li><li>檢查中文、人物動作及資訊安排。</li><li>選一項問題，向 AI 提出修改要求。</li></ol></div>
+      </div><div><div class="card"><h3><span class="num">3</span> 海報使用的資料（可編輯）</h3><div class="field-head"><label for="source-p18">目前主題資料</label><button type="button" data-reset="p18">還原示範資料</button></div><textarea class="source" id="source-p18" spellcheck="false" aria-label="P18 原始資料"></textarea><p class="hint">醫療、感染管制、清潔及服務程序都必須使用正確且經確認的文字，不讓 AI 自創規範。</p></div></div></div>
+      <div class="card"><h3><span class="num">4</span> 複製海報生成提示詞</h3><textarea id="prompt-p18" class="prompt" readonly spellcheck="false" aria-label="P18 可複製提示詞"></textarea><div class="actions"><button type="button" class="btn primary" data-copy="p18">🎨 複製海報提示詞</button><button type="button" class="btn secondary" id="copy-revision">✏️ 複製圖片修改指令</button><a class="btn link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">開啟 ChatGPT ↗</a></div><div class="task-help">⏳ <strong>生成較慢或帳號額度不足？</strong>不用等全場完成。可觀看講師投影的海報範例，試著找出錯字、資訊遺漏或圖像問題。</div></div>
+      <div class="card"><h3><span class="num">✓</span> 完成檢查</h3><div class="checklist"><label class="check"><input type="checkbox"> 已生成 1 張海報草稿，或完成 1 張範例海報檢查</label><label class="check"><input type="checkbox"> 已找到至少 1 個需要檢查或修改的地方</label><label class="check"><input type="checkbox"> 已理解海報正式使用前需由權責人員確認</label></div><p class="check-note">今天的海報只是學習草稿，不代表可以直接張貼、發布或當作正式醫療指引。</p></div>
+    </section>
+
+    <section class="panel" id="panel-p27" role="region" aria-labelledby="tab-p27" hidden>
+      <div class="section-header"><div><small>段落實作 ③</small><h2>AI 教學簡報大綱生成</h2></div><span class="time">⏱ 5 分鐘｜選做練習</span></div>
+      <div class="grid"><div>
+        <div class="card"><h3><span class="num">1</span> 選擇簡報主題</h3><div class="topic-grid" data-options="p27"></div><div class="note-banner"><strong>基礎任務：</strong>現場只要先完成 3 頁簡報大綱。<br /><strong>進階任務：</strong>熟悉操作的同仁可延伸成 6 頁（屬於 5–8 頁延伸練習）。</div></div>
+        <div class="card"><h3><span class="num">2</span> 操作流程</h3><ol class="steps"><li>開啟前面的 ChatGPT 對話或建立新對話。</li><li>確認簡報主題、對象及資料。</li><li>選擇下方「3 頁」或「6 頁」版本。</li><li>複製提示詞並請 AI 生成大綱。</li><li>檢查每頁標題、重點與視覺建議。</li></ol></div>
+      </div><div><div class="card"><h3><span class="num">3</span> 簡報來源資料（可編輯）</h3><div class="field-head"><label for="source-p27">目前主題資料</label><button type="button" data-reset="p27">還原示範資料</button></div><textarea class="source" id="source-p27" spellcheck="false" aria-label="P27 原始資料"></textarea><div style="height:12px"></div><div class="subnav" role="group" aria-label="選擇頁數"><button type="button" data-length="3" class="active" aria-pressed="true">基礎｜3 頁</button><button type="button" data-length="6" aria-pressed="false">進階｜6 頁</button></div></div></div></div>
+      <div class="card"><h3><span class="num">4</span> 複製簡報大綱提示詞</h3><textarea id="prompt-p27" class="prompt" readonly spellcheck="false" aria-label="P27 可複製提示詞"></textarea><div class="actions"><button type="button" class="btn primary" data-copy="p27">🗂️ 複製簡報提示詞</button><a class="btn link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">開啟 ChatGPT ↗</a></div><div class="task-help">🎯 <strong>完成標準：</strong>3 頁各有「標題、三項以內重點、視覺建議」，並做一次內容修正。不需要現場匯出真正的 PowerPoint。</div></div>
+      <div class="card"><h3><span class="num">✓</span> 完成檢查</h3><div class="checklist"><label class="check"><input type="checkbox"> 已得到 1 份三頁（或進階六頁）簡報大綱</label><label class="check"><input type="checkbox"> 每頁都有標題、重要內容與視覺建議</label><label class="check"><input type="checkbox"> 已檢查資料來源及未確認資訊</label></div><p class="check-note">如果時間不足，先看講師示範即可，回到工作崗位再練習。</p></div>
+    </section>
+  </main>
+  <footer class="foot">
+    <strong>課後使用提醒</strong><br />
+    這份 HTML 本身不會將你在欄位裡輸入的資料主動上傳到伺服器；點選複製後，是否將內容貼入外部 AI 平台，仍請自行確認院方資料使用規範。<br />
+    本教材為 2026/10/27 臺中榮總 AI 研習示範練習，示例不代表院方正式文件、醫療建議或作業標準。<br />
+    <strong>使用方法：</strong>選主題 → 確認示範資料 → 複製提示詞 → 在 ChatGPT 貼上 → 檢查結果。<br />
+    <span style="color:#827889">講師：黃兆鵬｜單一 HTML、可離線開啟教材；使用 ChatGPT 仍需要網路與適用帳號。</span>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><div class="no-js">要使用主題切換與一鍵複製功能，請使用已啟用 JavaScript 的瀏覽器。</div></noscript>
+<script>
+(function(){
+  'use strict';
+  const topics={
+    fall:{label:'長者預防跌倒',icon:'👵',audience:'65 歲以上長者與家屬',visual:'明亮安全的居家情境，友善的長者插畫，清楚呈現防跌重點',source:'【公開衛教主題練習稿；正式使用前請以國健署或院方已確認的現行資料核對】\n主題：長者預防跌倒。\n重點方向：留意跌倒風險；保持適合身體狀況的規律活動；依醫囑檢視用藥及健康狀況；維持良好居家照明與地面防滑、走道暢通；選用合腳鞋具及必要輔具。\n注意：這些是課堂練習方向，不構成個別病人的醫療建議。'},
+    promo:{label:'健康促進活動',icon:'💛',audience:'院內同仁與活動參與者',visual:'親切活力的醫院健康促進活動主視覺，清爽的人物插畫與清楚的資訊區域',source:'【虛構練習案例，非真實院內活動】\n活動名稱：健康促進宣導活動（示例）。\n目的：增進健康知識與健康生活意識。\n參加對象：院內同仁及有興趣的民眾。\n活動日期：待確認。\n活動地點：待確認。\n報名方式：待確認。\n提醒：不得自行編造日期、地點、流程或主辦單位。'},
+    safety:{label:'工作安全提醒',icon:'🦺',audience:'院內工作與支援服務同仁',visual:'清楚友善的工作安全情境插畫，簡潔提醒卡片，不呈現未經確認的技術操作動作',source:'【虛構教學範例，非院內正式 SOP】\n主題：工作安全提醒。\n原則：作業前注意環境風險；依現行核准規範執行工作與使用防護裝備；異常情況依院內規定通報。\n注意：具體清潔消毒、設備操作、危害處理程序，須由院方提供現行核准版本，不得讓 AI 自行編寫。'},
+    hygiene:{label:'手部衛生宣導',icon:'🧼',audience:'院內工作人員與一般民眾',visual:'簡潔清楚的手部衛生宣導插畫、適當的洗手情境，保留重點說明區域',source:'【練習標題與資料欄位，不代表完整手部衛生指引】\n主題：手部衛生宣導。\n目的：提醒依據院方或衛生單位的現行指引進行手部衛生。\n實際步驟、時機與注意事項：〔請貼入官方或院方已確認的衛教文字〕。\n注意：未提供具體指引時，不得自行生成步驟、秒數或感染管制程序。'},
+    service:{label:'門診服務指引',icon:'🏥',audience:'就醫民眾及陪同家屬',visual:'明亮的門診服務櫃檯和方向指引插畫，步驟清楚易讀，不使用虛構院內指標',source:'【虛構流程整理練習，並非臺中榮總實際門診動線】\n主題：門診服務指引。\n目的：幫助就醫民眾理解官方門診資訊。\n可提供資訊：官方公告的掛號、報到、候診、批價等服務內容。\n實際順序、樓層、時間、地點與特殊流程：〔待由院方正式資料確認〕。\n注意：不得自行編造樓層、櫃檯名稱、就醫流程或服務時間。'}
+  };
+  const byPractice={p9:['fall','promo','safety'],p18:['fall','hygiene','promo','safety','service'],p27:['fall','hygiene','service','safety','promo']};
+  const selections={p9:'fall',p18:'fall',p27:'fall'};
+  const overrides={p9:{},p18:{},p27:{}};
+  let slideLength=3;
+  const $=(s)=>document.querySelector(s);
+  function currentSource(p){const topic=selections[p];return Object.prototype.hasOwnProperty.call(overrides[p],topic)?overrides[p][topic]:topics[topic].source;}
+  function setSource(p){$('#source-'+p).value=currentSource(p);}
+  function prompt(p){
+    const t=topics[selections[p]],src=currentSource(p).trim()||'〔尚未提供來源資料：請先補充經確認資料，不得自行編造〕';
+    if(p==='p9') return `你是一位專業且重視資料正確性的宣導文案編輯。\n\n【工作任務】請依照下方提供的資料，整理成繁體中文的「${t.label}」宣導文案草稿。\n【閱讀對象】${t.audience}\n【內容架構】\n1. 一個容易理解的主標題（不超過 18 字）。\n2. 一句簡短副標題。\n3. 三項衛教／宣導重點，每項盡量在 30 字以內。\n4. 一句行動或注意事項提醒。\n\n【限制】\n- 只能使用原始資料已有且適合宣導的資訊，不得自行新增醫療診斷、用藥建議、清消程序、院內規範、時間、地點或統計數字。\n- 不確定或缺少的資訊請標示「待確認」，不得猜測。\n- 用詞正式、自然、清楚、易懂；資訊須適合閱讀對象。\n- 請在最後新增「人工檢核提醒」，列出 2 個應回原始資料確認的項目。\n\n【已提供的來源或示範資料】\n${src}`;
+    if(p==='p18') return `請根據以下已核對資料，生成一張繁體中文 A4 直式「${t.label}」宣導海報草稿。\n\n【閱讀對象】${t.audience}\n【主要視覺】${t.visual}\n【設計風格】溫暖、清晰、專業、親切，乾淨的醫療／公共服務資訊插畫。\n【色彩】溫暖米白、柔和紫藍、少量活力橘點綴，保持良好文字對比。\n【版面】上方清楚的主標題，中段放置主視覺，下方以 3 個卡片呈現核心資訊，最下方保留資料來源與人工審核欄位。\n【內容限制】\n- 只能使用下方已提供的資料；來源未提供的具體醫療、感染管制、設備操作、院內服務流程、數字及日期不得自行編造。\n- 不要生成未經授權的院徽、院方 Logo 或虛構的醫院名稱。\n- 如果原始資料不足以構成專業圖解，請改成一般性概念圖卡，將欠缺資訊標示「待確認」。\n- 文字以繁體中文呈現；若有錯字或排版問題，須保留人工校正空間。\n- 此為學習草稿，不代表正式審核或可直接發布。\n\n【已提供的來源或示範資料】\n${src}`;
+    const structure=slideLength===3?`第 1 頁：主題介紹與重要性。\n第 2 頁：三項核心重點。\n第 3 頁：注意事項與行動提醒。`:`第 1 頁：封面與對象。\n第 2 頁：問題與工作情境。\n第 3 頁：核心觀念。\n第 4 頁：三項關鍵重點。\n第 5 頁：示範案例與視覺建議。\n第 6 頁：注意事項、資料查核與總結。`;
+    return `你是一位專業的教育訓練簡報規劃助手。\n\n【任務】根據下方來源資料，建立一份「${t.label}」繁體中文教學簡報大綱。\n【對象】${t.audience}\n【簡報頁數】${slideLength} 頁。\n\n【每頁請包含】\n- 投影片標題（簡潔清楚）。\n- 不超過 3 項的重要內容（每項盡量短句）。\n- 一個適合的視覺呈現建議（例如插圖、比較表或流程圖）。\n\n【教學順序】\n${structure}\n\n【限制】\n- 只使用下方已有且可確認的資料。\n- 不得自行編造醫療建議、院內規範、清消步驟、就醫流程、實際活動資訊、數據或引用。\n- 若資訊不足，直接標記「待確認」。\n- 最後補上一張「人工檢核清單」（此清單不計入上述頁數）。\n- 內容正式、清楚、容易理解，供後續人工製作簡報使用，不需要直接產出 PPTX。\n\n【已提供的來源或示範資料】\n${src}`;
+  }
+  function renderOptions(p){document.querySelector('[data-options="'+p+'"]').innerHTML=byPractice[p].map(id=>`<button class="topic" type="button" data-option="${p}|${id}" aria-pressed="${id===selections[p]}"><span class="emoji" aria-hidden="true">${topics[id].icon}</span><span>${topics[id].label}</span></button>`).join('');}
+  function update(p){setSource(p);$('#prompt-'+p).value=prompt(p);renderOptions(p);}
+  function updateTab(p){document.querySelectorAll('.tab').forEach(btn=>{const active=btn.dataset.tab===p;btn.classList.toggle('active',active);btn.setAttribute('aria-selected',String(active));});document.querySelectorAll('.panel').forEach(el=>{const active=el.id==='panel-'+p;el.classList.toggle('active',active);el.hidden=!active;});history.replaceState(null,'','#'+p);}
+  let toastTimer;
+  function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2700);}
+  async function copyText(text,el){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);toast('✓ 已複製，切到 ChatGPT 貼上即可');return true;}}catch(e){}
+    const target=el||document.createElement('textarea');let added=false;if(!el){target.value=text;target.style.position='fixed';target.style.left='-9999px';document.body.appendChild(target);added=true;}else{target.value=text;}
+    target.focus();target.select();target.setSelectionRange(0,target.value.length);let success=false;try{success=document.execCommand('copy');}catch(e){}
+    if(added)target.remove();toast(success?'✓ 已複製，切到 ChatGPT 貼上即可':'無法自動複製，已選取文字，請長按或按 Ctrl+C 複製');return success;
+  }
+  document.addEventListener('click',evt=>{
+    const tab=evt.target.closest('[data-tab]');if(tab){updateTab(tab.dataset.tab);return;}
+    const option=evt.target.closest('[data-option]');if(option){const [p,id]=option.dataset.option.split('|');selections[p]=id;update(p);return;}
+    const reset=evt.target.closest('[data-reset]');if(reset){const p=reset.dataset.reset;delete overrides[p][selections[p]];update(p);toast('已還原本主題示範資料');return;}
+    const cp=evt.target.closest('[data-copy]');if(cp){const p=cp.dataset.copy;copyText($('#prompt-'+p).value,$('#prompt-'+p));return;}
+    const length=evt.target.closest('[data-length]');if(length){slideLength=Number(length.dataset.length);document.querySelectorAll('[data-length]').forEach(btn=>{const active=Number(btn.dataset.length)===slideLength;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active));});$('#prompt-p27').value=prompt('p27');return;}
+    if(evt.target.closest('#copy-revision')){copyText('請保留上一張海報已確認的主題與核心內容。將文字標題加大、簡化不必要的背景物件，讓資訊卡片排列更清楚，並提高文字與背景對比。不要新增醫療或院內作業規範。如無法保證文字完全正確，請提示我人工校正。');}
+  });
+  document.querySelectorAll('.source').forEach(el=>{el.addEventListener('input',()=>{const p=el.id.replace('source-','');overrides[p][selections[p]]=el.value;$('#prompt-'+p).value=prompt(p);});});
+  ['p9','p18','p27'].forEach(update);
+  const hash=location.hash.replace('#','');if(['p9','p18','p27'].includes(hash))updateTab(hash);
+})();
+</script>
+</body>
+</html>
